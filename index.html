@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Сервисный центр PODWALL в Новосибирске — ремонт компьютеров, телефонов, оргтехники, заправка картриджей. Быстро, надежно, профессионально." />
-  <meta name="keywords" content="ремонт компьютеров Новосибирск, ремонт телефонов, заправка картриджей, ремонт принтеров, сервисный центр, ремонт мониторов" />
+  <meta name="description" content="Сервисный центр PODWALL в Новосибирске — ремонт компьютеров, телефонов, оргтехники, заправка картриджей." />
+  <meta name="keywords" content="ремонт компьютеров Новосибирск, ремонт телефонов, заправка картриджей, ремонт принтеров, сервисный центр" />
   <meta name="author" content="Сервисный центр PODWALL" />
   
   <!-- Open Graph / Facebook -->
@@ -12,7 +12,7 @@
   <meta property="og:title" content="PODWALL — Ремонт электроники в Новосибирске" />
   <meta property="og:description" content="Профессиональный ремонт компьютеров, телефонов, оргтехники. Заправка картриджей." />
   <meta property="og:image" content="https://placehold.co/1200x630/e2e8f0/64748b?text=PODWALL+Сервисный+центр" />
-  <meta property="og:url" content="https://podwall.ru" />
+  <meta property="og:url" content="https://podwall.github.io" />
   
   <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -20,30 +20,13 @@
 
   <title>PODWALL — Ремонт компьютеров и электроники в Новосибирске</title>
 
-  <!-- Подключение React и Babel -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Настройка цветов -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#2563eb',
-            secondary: '#7c3aed',
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Дополнительные стили -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
-  <div id="root"></div>
-  <script type="text/babel" src="src/App.jsx"></script>
+  <div id="app"></div>
+  <script src="script.js"></script>
 </body>
 </html>
