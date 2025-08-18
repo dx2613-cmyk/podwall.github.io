@@ -289,7 +289,7 @@ const App = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                    <span className="text-gray-700">Более 10 000 довольных клиентов</span>
+                    <span className="text-gray-700">Более 1000 довольных клиентов</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <div className="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -512,12 +512,12 @@ const App = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Режим работы</h4>
               <div className="space-y-2 text-gray-400">
-                <p><span className="text-white">Понедельник:</span> 09:00–29:00</p>
-                <p><span className="text-white">Вторник:</span> 09:00–29:00</p>
-                <p><span className="text-white">Среда:</span> 09:00–29:00</p>
-                <p><span className="text-white">Четверг:</span> 09:00–29:00</p>
-                <p><span className="text-white">Пятница:</span> 09:00–29:00</p>
-                <p><span className="text-white">Суббота:</span> 09:00–29:00</p>
+                <p><span className="text-white">Понедельник:</span> 09:00–20:00</p>
+                <p><span className="text-white">Вторник:</span> 09:00–20:00</p>
+                <p><span className="text-white">Среда:</span> 09:00–20:00</p>
+                <p><span className="text-white">Четверг:</span> 09:00–20:00</p>
+                <p><span className="text-white">Пятница:</span> 09:00–20:00</p>
+                <p><span className="text-white">Суббота:</span> 11:00–16:00</p>
                 <p><span className="text-white">Воскресенье:</span> Выходной</p>
               </div>
             </div>
