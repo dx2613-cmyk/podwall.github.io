@@ -62,18 +62,35 @@ document.addEventListener('DOMContentLoaded', function() {
             <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Контакты</a>
           </nav>
 
-          <button class="md:hidden text-gray-700" id="menu-toggle">
+          <button 
+            class="md:hidden text-gray-700 focus:outline-none" 
+            id="menu-toggle"
+            aria-label="Открыть меню"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
           </button>
         </div>
       </div>
+      
+      <!-- Мобильное меню -->
+      <div 
+        id="mobile-menu" 
+        class="hidden md:hidden bg-white border-t border-gray-200 transition-all duration-300 ease-in-out"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50">Услуги</a>
+          <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50">О нас</a>
+          <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50">Контакты</a>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10"></div>
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-r from-blue-50 to-purple-50">
       <div class="max-w-7xl mx-auto relative">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <div>
@@ -86,17 +103,21 @@ document.addEventListener('DOMContentLoaded', function() {
             
             <div class="flex flex-wrap gap-4 mb-8">
               <div class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-medium">
-                Надежно
+                Гарантия качества
               </div>
               <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">
-                Быстро
+                Быстрый ремонт
               </div>
               <div class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium">
-                Профессионально
+                Опытные мастера
               </div>
             </div>
 
-            <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300" id="consult-btn">
+            <button 
+              class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              id="consult-btn"
+              aria-label="Заказать консультацию"
+            >
               Заказать консультацию
             </button>
           </div>
@@ -106,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="grid grid-cols-2 gap-6">
                 ${services.slice(0, 4).map(service => `
                   <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition-shadow">
-                    <div class="text-3xl mb-2">${service.icon}</div>
+                    <div class="text-3xl mb-2" aria-hidden="true">${service.icon}</div>
                     <h3 class="font-semibold text-gray-900 text-sm">${service.title}</h3>
                     <p class="text-blue-600 font-medium text-sm">${service.price}</p>
                   </div>
@@ -136,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <div class="p-8">
                 <div class="flex items-center mb-4">
                   <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mr-4">
-                    <span class="text-white text-2xl">${service.icon}</span>
+                    <span class="text-white text-2xl" aria-hidden="true">${service.icon}</span>
                   </div>
                   <h3 class="text-xl font-bold text-gray-900">${service.title}</h3>
                 </div>
@@ -145,7 +166,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 <div class="flex items-center justify-between">
                   <span class="text-2xl font-bold text-blue-600">${service.price}</span>
-                  <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-md transition-shadow order-btn">
+                  <button 
+                    class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-md transition-shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 order-btn"
+                    data-service="${service.title}"
+                    aria-label="Заказать ${service.title}"
+                  >
                     Заказать
                   </button>
                 </div>
@@ -178,7 +203,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
               </div>
 
-              <!-- Остальные преимущества -->
               ${[
                 'Оригинальные запчасти',
                 'Быстрые сроки',
@@ -209,6 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 src="https://placehold.co/500x400/e2e8f0/64748b?text=Сервисный+центр" 
                 alt="Сервисный центр PODWALL"
                 class="w-full h-64 object-cover rounded-xl mb-6"
+                loading="lazy"
               />
               <div class="space-y-4">
                 ${[
@@ -250,17 +275,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 {
                   icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
                   title: 'График работы',
-                  text: 'Пн–Сб: 09:00–29:00<br>Вс: выходной'
+                  text: 'Пн–Сб: 09:00–20:00<br>Вс: выходной'
                 },
                 {
                   icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z',
                   title: 'Телефон',
-                  text: '+7 952 909-69-09'
+                  text: '<a href="tel:+79529096909" class="hover:text-blue-600">+7 952 909-69-09</a>'
                 },
                 {
                   icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z',
                   title: 'Email',
-                  text: 'ceis.ooo@yandex.ru'
+                  text: '<a href="mailto:ceis.ooo@yandex.ru" class="hover:text-blue-600">ceis.ooo@yandex.ru</a>'
                 }
               ].map(item => `
                 <div class="flex items-start space-x-4">
@@ -278,10 +303,14 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
           </div>
 
-          <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
+          <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-lg">
             <h3 class="text-2xl font-bold text-gray-900 mb-6">Закажите обратный звонок</h3>
             
-            <form id="contact-form" class="space-y-6">
+            <form id="contact-form" class="space-y-6" method="POST" action="https://formsubmit.co/ceis.ooo@yandex.ru">
+              <input type="hidden" name="_subject" value="Новая заявка с сайта PODWALL">
+              <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
+              <input type="hidden" name="_captcha" value="false">
+              
               <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
                   Имя *
@@ -305,8 +334,9 @@ document.addEventListener('DOMContentLoaded', function() {
                   id="phone"
                   name="phone"
                   required
+                  pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}"
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  placeholder="+7 (___) ___-__-__"
+                  placeholder="+7 (999) 999-99-99"
                 />
               </div>
 
@@ -344,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function() {
               <button
                 type="submit"
                 id="submit-btn"
-                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+                class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 rounded-lg font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 Отправить заявку
               </button>
@@ -377,10 +407,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <h4 class="text-lg font-semibold mb-4">Контакты</h4>
             <div class="space-y-2 text-gray-400">
               <p>г. Новосибирск, ул. Театральная 4/1</p>
-              <p>Пн–Сб: 09:00–29:00</p>
+              <p>Пн–Сб: 09:00–20:00</p>
               <p>Вс: выходной</p>
-              <p>+7 952 909-69-09</p>
-              <p>ceis.ooo@yandex.ru</p>
+              <p><a href="tel:+79529096909" class="hover:text-blue-400">+7 952 909-69-09</a></p>
+              <p><a href="mailto:ceis.ooo@yandex.ru" class="hover:text-blue-400">ceis.ooo@yandex.ru</a></p>
             </div>
           </div>
 
@@ -403,7 +433,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
 
         <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Сервисный центр PODWALL (ООО «ЦЭИС»). Все права защищены.</p>
+          <p>&copy; ${new Date().getFullYear()} Сервисный центр PODWALL (ООО «ЦЭИС»). Все права защищены.</p>
         </div>
       </div>
     </footer>
@@ -411,6 +441,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Обработчики событий
   const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
   const consultBtn = document.getElementById('consult-btn');
   const orderButtons = document.querySelectorAll('.order-btn');
   const contactForm = document.getElementById('contact-form');
@@ -418,38 +449,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Мобильное меню
   menuToggle.addEventListener('click', function() {
-    const mobileMenu = document.querySelector('.mobile-menu');
-    if (mobileMenu) {
-      mobileMenu.remove();
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', !isExpanded);
+    mobileMenu.classList.toggle('hidden');
+    
+    // Прокрутка страницы при открытом меню
+    if (!mobileMenu.classList.contains('hidden')) {
+      document.body.style.overflow = 'hidden';
     } else {
-      const newMenu = document.createElement('div');
-      newMenu.className = 'mobile-menu md:hidden bg-white border-t border-gray-200';
-      newMenu.innerHTML = `
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Услуги</a>
-          <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600">О нас</a>
-          <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600">Контакты</a>
-        </div>
-      `;
-      document.querySelector('header').appendChild(newMenu);
+      document.body.style.overflow = '';
     }
   });
 
+  // Закрытие меню при клике на ссылку
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+
   // Прокрутка к контактам
-  consultBtn.addEventListener('click', function() {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  consultBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('contact').scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
   });
 
   // Кнопки "Заказать" в услугах
   orderButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const service = this.getAttribute('data-service');
+      if (service) {
+        const select = document.getElementById('service');
+        select.value = service;
+      }
+      document.getElementById('contact').scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
     });
   });
 
   // Отправка формы
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
+    
+    // Валидация формы
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    
+    if (!name || !phone) {
+      alert('Пожалуйста, заполните обязательные поля');
+      return;
+    }
+    
+    // Блокировка кнопки
     submitBtn.disabled = true;
     submitBtn.innerHTML = `
       <div class="flex items-center justify-center">
@@ -460,15 +519,26 @@ document.addEventListener('DOMContentLoaded', function() {
         Отправка...
       </div>
     `;
-
-    // Имитация отправки
-    setTimeout(() => {
+    
+    try {
+      // Имитация отправки (в реальном проекте используйте fetch)
+      await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // Успешная отправка
       submitBtn.innerHTML = 'Отправлено!';
       contactForm.reset();
+      
+      // Перенаправление на страницу благодарности (если настроено)
+      // window.location.href = 'thanks.html';
+      
+    } catch (error) {
+      console.error('Ошибка отправки формы:', error);
+      submitBtn.innerHTML = 'Ошибка отправки';
+    } finally {
       setTimeout(() => {
         submitBtn.innerHTML = 'Отправить заявку';
         submitBtn.disabled = false;
-      }, 2000);
-    }, 2000);
+      }, 3000);
+    }
   });
 });
