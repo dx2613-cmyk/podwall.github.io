@@ -124,14 +124,9 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
           const serviceSelect = document.getElementById('service');
           if (serviceSelect && service) {
-            for (let option of serviceSelect.options) {
-              if (option.value === service) {
-                serviceSelect.value = service;
-                break;
-              }
-            }
+            serviceSelect.value = service;
           }
-        }, 500);
+        }, 100);
       }
     });
 
@@ -159,29 +154,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
+  // Простая валидация телефона
+  function validatePhone(phone) {
+    const digits = phone.replace(/\D/g, '');
+    return digits.length >= 10;
+  }
+
   // Обработка формы
   function initForm() {
     const contactForm = document.getElementById('contact-form');
     if (!contactForm) return;
 
-    // Маска для телефона
-    const phoneInput = document.getElementById('phone');
-    if (phoneInput) {
-      phoneInput.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length > 0) {
-          value = '+7 ' + value;
-          if (value.length > 4) value = value.substring(0, 4) + ' (' + value.substring(4);
-          if (value.length > 8) value = value.substring(0, 8) + ') ' + value.substring(8);
-          if (value.length > 13) value = value.substring(0, 13) + '-' + value.substring(13);
-          if (value.length > 16) value = value.substring(0, 16) + '-' + value.substring(16);
-        }
-        e.target.value = value;
-      });
-    }
-
-    // Обработка отправки формы
+    // Валидация перед отправкой
     contactForm.addEventListener('submit', function(e) {
+      const phoneInput = document.getElementById('phone');
+      const nameInput = document.getElementById('name');
+      
+      // Проверка имени
+      if (!nameInput.value.trim()) {
+        e.preventDefault();
+        showNotification('Пожалуйста, введите ваше имя', 'error');
+        nameInput.focus();
+        return;
+      }
+      
+      // Проверка телефона
+      if (!validatePhone(phoneInput.value)) {
+        e.preventDefault();
+        showNotification('Пожалуйста, введите корректный номер телефона', 'error');
+        phoneInput.focus();
+        return;
+      }
+
+      // Если валидация прошла, показываем уведомление
       const submitBtn = this.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
       
@@ -197,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       `;
 
-      // Форма отправится через Yandex Forms, здесь только визуальная обработка
+      // Форма отправится через Yandex Forms
       setTimeout(() => {
         showNotification('Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.', 'success');
         
