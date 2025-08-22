@@ -67,47 +67,37 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Инициализация мобильного меню
-  let mobileMenuOpen = false;
-
   function initMobileMenu() {
     const toggle = document.getElementById('menu-toggle');
-    if (!toggle) return;
+    const menu = document.getElementById('mobile-menu');
+    
+    if (!toggle || !menu) return;
 
     toggle.addEventListener('click', () => {
-      const menu = document.querySelector('.mobile-menu');
-      if (menu) {
-        menu.remove();
-        mobileMenuOpen = false;
-      } else {
-        const newMenu = document.createElement('div');
-        newMenu.className = 'mobile-menu md:hidden bg-white border-t border-gray-200 absolute left-0 right-0 top-full z-50 shadow-lg';
-        newMenu.innerHTML = `
-          <div class="px-4 py-3 space-y-2 bg-white">
-            <a href="#services" class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">Услуги</a>
-            <a href="#tradein" class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">Выкуп и Trade-in</a>
-            <a href="#about" class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">О нас</a>
-            <a href="#contact" class="block px-3 py-3 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">Контакты</a>
-          </div>
-        `;
-        document.querySelector('header').appendChild(newMenu);
-        mobileMenuOpen = true;
-      }
+      menu.classList.toggle('hidden');
+    });
+
+    // Закрытие меню при клике на ссылку
+    menu.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
     });
   }
 
   // Плавная прокрутка
   function scrollToSection(sectionId) {
     const element = document.getElementById(sectionId);
-    if (element) {
-      const headerHeight = document.querySelector('header').offsetHeight;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+    if (!element) return;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+    const headerHeight = document.querySelector('header').offsetHeight;
+    const elementPosition = element.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
   }
 
   // Обработка кликов
@@ -123,11 +113,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const service = e.target.getAttribute('data-service');
         scrollToSection('contact');
         
-        // Ждём, пока форма загрузится
+        // Через 300 мс пытаемся выбрать услугу
         setTimeout(() => {
           const select = document.getElementById('service');
-          if (select && service) select.value = service;
-        }, 200);
+          if (select && service) {
+            // Пытаемся найти и выбрать нужный option
+            for (let option of select.options) {
+              if (option.value === service || option.text === service) {
+                select.value = option.value;
+                break;
+              }
+            }
+          }
+        }, 300);
       }
     });
 
@@ -135,13 +133,16 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('tradein-btn')?.addEventListener('click', () => {
       scrollToSection('contact');
       
-      // Через 500 мс (после прокрутки) пытаемся выбрать "Выкуп или Trade-in"
+      // Через 500 мс после прокрутки выбираем "Выкуп или Trade-in"
       setTimeout(() => {
         const select = document.getElementById('service');
         if (select) {
-          // Попробуем найти вариант с таким текстом
           for (let option of select.options) {
-            if (option.text.includes('выкуп') || option.text.includes('Trade-in') || option.text.includes('trade-in')) {
+            if (
+              option.text.toLowerCase().includes('выкуп') || 
+              option.text.toLowerCase().includes('trade-in') ||
+              option.text.toLowerCase().includes('выкуп или trade-in')
+            ) {
               select.value = option.value;
               break;
             }
@@ -150,23 +151,13 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 500);
     });
 
-    // Плавная прокрутка по ссылкам
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Плавная прокрутка по ссылкам в навигации
+    document.querySelectorAll('a[href^="#"]:not(.order-btn)').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         scrollToSection(targetId);
       });
-    });
-  }
-
-  // Делегирование кликов (для мобильного меню)
-  function initClickDelegation() {
-    document.addEventListener('click', e => {
-      if (e.target.matches('.mobile-menu a')) {
-        const menu = document.querySelector('.mobile-menu');
-        menu?.remove();
-      }
     });
   }
 
@@ -178,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !entry.target.classList.contains('animate-fade-in')) {
           entry.target.classList.add('animate-fade-in');
         }
       });
@@ -196,7 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function init() {
     renderServices();
     initMobileMenu();
-    initClickDelegation();
     initClickHandlers();
     initAnimations();
     console.log('PODWALL website initialized successfully!');
