@@ -59,42 +59,27 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
- <!-- Header -->
-<header class="bg-white shadow-lg sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center py-4">
-      <!-- Логотип -->
-      <div class="flex items-center space-x-3">
-        <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-          <span class="text-white font-bold text-xl">P</span>
+  <!-- Header -->
+  <header class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+            <span class="text-white font-bold text-xl">P</span>
+          </div>
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900">PODWALL</h1>
+            <p class="text-sm text-gray-600">Сервисный центр</p>
+          </div>
         </div>
-        <div>
-          <h1 class="text-2xl font-bold text-gray-900">PODWALL</h1>
-          <p class="text-sm text-gray-600">Сервисный центр</p>
-        </div>
-      </div>
 
-      <!-- Навигация + телефоны в одной строке -->
-      <div class="flex items-center space-x-8">
-        <nav class="hidden md:flex items-center space-x-8">
+        <nav class="hidden md:flex space-x-8">
           <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Услуги</a>
           <a href="#tradein" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Выкуп и Trade-in</a>
           <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">О нас</a>
           <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Контакты</a>
-
-          <!-- Телефоны в одной строке, жирный шрифт -->
-          <div class="hidden lg:flex items-center space-x-4 ml-6 border-l border-gray-200 pl-6">
-            <a href="tel:83832333304" class="text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors">
-              8 (383) 233-33-04
-            </a>
-            <span class="text-gray-400">•</span>
-            <a href="tel:+79529096909" class="text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors">
-              8-952-909-6-909
-            </a>
-          </div>
         </nav>
 
-        <!-- Мобильная кнопка -->
         <button class="md:hidden text-gray-700" id="menu-toggle">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -102,23 +87,7 @@
         </button>
       </div>
     </div>
-
-    <!-- Мобильное меню -->
-    <div class="hidden bg-white border-t border-gray-200" id="mobile-menu">
-      <div class="px-4 py-3 space-y-2">
-        <!-- Телефоны в мобильном меню -->
-        <div class="space-y-1 border-b border-gray-100 pb-3 text-right">
-          <a href="tel:83832333304" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8 (383) 233-33-04</a>
-          <a href="tel:+79529096909" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8-952-909-6-909</a>
-        </div>
-        <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Услуги</a>
-        <a href="#tradein" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Выкуп и Trade-in</a>
-        <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">О нас</a>
-        <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Контакты</a>
-      </div>
-    </div>
-  </div>
-</header>
+  </header>
 
   <!-- Hero Section -->
   <section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -152,28 +121,14 @@
 
         <div class="relative">
           <div class="bg-white rounded-2xl shadow-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
-            <div class="grid grid-cols-2 gap-6">
-              <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition-shadow">
-                <div class="text-3xl mb-2">💻</div>
-                <h3 class="font-semibold text-gray-900 text-sm">Ремонт компьютеров</h3>
-                <p class="text-blue-600 font-medium text-sm">от 1000 ₽</p>
-              </div>
-              <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition-shadow">
-                <div class="text-3xl mb-2">📱</div>
-                <h3 class="font-semibold text-gray-900 text-sm">Ремонт телефонов</h3>
-                <p class="text-blue-600 font-medium text-sm">от 800 ₽</p>
-              </div>
-              <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition-shadow">
-                <div class="text-3xl mb-2">🖨️</div>
-                <h3 class="font-semibold text-gray-900 text-sm">Ремонт оргтехники</h3>
-                <p class="text-blue-600 font-medium text-sm">от 900 ₽</p>
-              </div>
-              <div class="text-center p-4 bg-gray-50 rounded-xl hover:shadow-md transition-shadow">
-                <div class="text-3xl mb-2">🖥️</div>
-                <h3 class="font-semibold text-gray-900 text-sm">Ремонт мониторов</h3>
-                <p class="text-blue-600 font-medium text-sm">от 1000 ₽</p>
-              </div>
-            </div>
+            <img 
+              src="https://dx2613-cmyk.github.io/podwall.github.io/proverka-toka-v-plate-noutbuka.jpg" 
+              alt="Ремонт материнской платы в сервисном центре"
+              class="w-full h-auto rounded-xl object-cover mb-6"
+            />
+            <p class="text-center text-gray-600 text-sm leading-relaxed">
+              Мы ремонтируем электронику с использованием профессионального оборудования.
+            </p>
           </div>
         </div>
       </div>
@@ -475,4 +430,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
