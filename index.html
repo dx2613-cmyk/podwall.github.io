@@ -169,8 +169,48 @@
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-container">
-        <!-- Услуги будут добавлены через script.js -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">💻</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Ремонт компьютеров</h3>
+          <p class="text-gray-600 mb-4">Диагностика и ремонт ПК, замена комплектующих, установка ПО</p>
+          <p class="text-blue-600 font-semibold">от 1000 ₽</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">📱</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Ремонт телефонов</h3>
+          <p class="text-gray-600 mb-4">Замена дисплеев, аккумуляторов, ремонт плат, восстановление данных</p>
+          <p class="text-blue-600 font-semibold">от 800 ₽</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">🖨️</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Ремонт оргтехники</h3>
+          <p class="text-gray-600 mb-4">Ремонт принтеров, МФУ, сканеров, копировальных аппаратов</p>
+          <p class="text-blue-600 font-semibold">от 900 ₽</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">🖥️</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Ремонт мониторов</h3>
+          <p class="text-gray-600 mb-4">Замена матриц, ремонт подсветки, ремонт блоков питания</p>
+          <p class="text-blue-600 font-semibold">от 1000 ₽</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">🔋</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">Заправка картриджей</h3>
+          <p class="text-gray-600 mb-4">Профессиональная заправка картриджей для принтеров и МФУ</p>
+          <p class="text-blue-600 font-semibold">от 300 ₽</p>
+        </div>
+
+        <div class="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-4">🛡️</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-3">IT-аутсорсинг</h3>
+          <p class="text-gray-600 mb-4">Обслуживание компьютеров и сетей для бизнеса</p>
+          <p class="text-blue-600 font-semibold">от 5000 ₽/мес</p>
+        </div>
       </div>
     </div>
   </section>
@@ -322,7 +362,7 @@
               </div>
               <div>
                 <h3 class="text-lg font-semibold text-gray-900">Email</h3>
-                <p class="text-gray-600">ceis.ooo@yandex.ru</p>
+                <p class="text-gray-600">altcom.servis@mail.ru</p>
               </div>
             </div>
           </div>
@@ -332,13 +372,15 @@
         <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
           <h3 class="text-2xl font-bold text-gray-900 mb-6">Закажите обратный звонок</h3>
           
-          <!-- ЗАМЕНИТЕ YOUR_FORM_ID на реальный ID из Yandex Forms -->
           <form 
-            action="https://forms.yandex.ru/u/68a7fab01f1eb5024c4236dd" 
+            action="https://formsubmit.co/altcom.servis@mail.ru" 
             method="POST"
             id="contact-form"
           >
-            <input type="hidden" name="form-name" value="contact-form">
+            <input type="hidden" name="_subject" value="Новая заявка с сайта PODWALL">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://yourwebsite.com/thanks.html">
             
             <div class="space-y-6">
               <div>
@@ -366,10 +408,7 @@
                   required
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
                   placeholder="+7 999 999-99-99"
-                  pattern="\+7[\s\d\-\(\)]{10,}"
-                  title="Введите номер телефона в формате +7 999 999-99-99"
                 />
-                <p class="text-sm text-gray-500 mt-1">Формат: +7 999 999-99-99</p>
               </div>
 
               <div>
@@ -440,7 +479,7 @@
           <div class="space-y-2 text-gray-400">
             <p>г. Новосибирск, ул. Театральная 4/1</p>
             <p>+7 952 909-69-09</p>
-            <p>ceis.ooo@yandex.ru</p>
+            <p>altcom.servis@mail.ru</p>
           </div>
         </div>
 
@@ -461,8 +500,70 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="script.js"></script>
+  <script>
+    // Мобильное меню
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('show');
+    });
+
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Обработка формы
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Валидация телефона
+      const phoneInput = document.getElementById('phone');
+      const phoneRegex = /^(\+7|8)[\s\-]?\(?[0-9]{3}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
+      
+      if (!phoneRegex.test(phoneInput.value)) {
+        alert('Пожалуйста, введите корректный номер телефона');
+        phoneInput.focus();
+        return;
+      }
+      
+      // Если все ок, отправляем форму
+      this.submit();
+    });
+
+    // Кнопка консультации
+    document.getElementById('consult-btn').addEventListener('click', function() {
+      document.getElementById('contact').scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+
+    // Анимации при скролле
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Наблюдаем за элементами услуг
+    document.querySelectorAll('#services > div > div').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
-
-
