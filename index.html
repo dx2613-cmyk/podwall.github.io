@@ -74,11 +74,11 @@
         </div>
 
         <nav class="hidden md:flex space-x-8">
-  <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Услуги</a>
-  <a href="#tradein" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Выкуп и Trade-in</a>
-  <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">О нас</a>
-  <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Контакты</a>
-</nav>
+          <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Услуги</a>
+          <a href="#tradein" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Выкуп и Trade-in</a>
+          <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">О нас</a>
+          <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Контакты</a>
+        </nav>
 
         <button class="md:hidden text-gray-700" id="menu-toggle">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -163,6 +163,62 @@
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-container">
         <!-- Услуги будут добавлены через script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Trade-in & Выкуп Section -->
+  <section id="tradein" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Трейд-ин или выкуп?
+        </h2>
+        <p class="text-xl text-gray-700 max-w-4xl mx-auto">
+          У вас в ящике лежат старые смартфоны и вы не знаете, что с ними сделать?  
+          Мы предлагаем вам целых 3 варианта, из которых вы сможете выбрать наиболее подходящий:
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Вариант 1 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+          <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            🔄
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Старое в зачёт нового</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Обменяйте старое устройство на новое с доплатой. Получите выгоду и обновите технику.
+          </p>
+        </div>
+
+        <!-- Вариант 2 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+          <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            🔧
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Старое в зачёт ремонта</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Сдайте старый телефон или ноутбук в зачёт стоимости ремонта. Экономьте на восстановлении.
+          </p>
+        </div>
+
+        <!-- Вариант 3 -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
+          <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
+            💰
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Выкуп устройства</h3>
+          <p class="text-gray-600 leading-relaxed">
+            Продайте старую технику быстро и по честной цене. Оплата наличными сразу после оценки.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300" id="tradein-btn">
+          Оценить мою технику
+        </button>
       </div>
     </div>
   </section>
@@ -320,7 +376,7 @@
           </div>
         </div>
 
-        <!-- Форма обратной связи через Yandex Forms (iframe) -->
+        <!-- Форма обратной связи через Yandex Forms -->
         <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
           <h3 class="text-2xl font-bold text-gray-900 mb-6">Закажите обратный звонок</h3>
 
@@ -388,4 +444,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
