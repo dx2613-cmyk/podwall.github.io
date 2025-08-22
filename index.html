@@ -40,9 +40,6 @@
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    section {
-      animation: fadeIn 0.5s ease-out;
-    }
     
     /* Стили для мобильного меню и уведомлений */
     .mobile-menu {
@@ -67,17 +64,6 @@
     
     .animate-fade-in {
       animation: fadeIn 0.6s ease-out forwards;
-    }
-    
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
   </style>
 </head>
@@ -136,9 +122,7 @@
             </div>
           </div>
 
-          <button onclick="scrollToSection('contact')" 
-            class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
-            id="consult-btn">
+          <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300" id="consult-btn">
             Заказать консультацию
           </button>
         </div>
@@ -350,7 +334,7 @@
           
           <!-- ЗАМЕНИТЕ YOUR_FORM_ID на реальный ID из Yandex Forms -->
           <form 
-            action="https://forms.yandex.ru/u/68a7fab01f1eb5024c4236dd/" 
+            action="https://forms.yandex.ru/u/YOUR_FORM_ID/" 
             method="POST"
             id="contact-form"
           >
@@ -381,8 +365,11 @@
                   name="phone"
                   required
                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  placeholder="+7 (___) ___-__-__"
+                  placeholder="+7 999 999-99-99"
+                  pattern="\+7[\s\d\-\(\)]{10,}"
+                  title="Введите номер телефона в формате +7 999 999-99-99"
                 />
+                <p class="text-sm text-gray-500 mt-1">Формат: +7 999 999-99-99</p>
               </div>
 
               <div>
@@ -477,4 +464,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
