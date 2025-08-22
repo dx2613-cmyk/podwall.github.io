@@ -180,10 +180,8 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
 
-    // Отправка формы
+    // Обработка отправки формы
     contactForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
       const submitBtn = this.querySelector('button[type="submit"]');
       const originalText = submitBtn.innerHTML;
       
@@ -199,20 +197,16 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       `;
 
-      // Имитация отправки (в реальном проекте здесь будет fetch/AJAX запрос)
+      // Форма отправится через Yandex Forms, здесь только визуальная обработка
       setTimeout(() => {
-        // Успешная отправка
         showNotification('Заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.', 'success');
         
-        // Сброс формы
-        contactForm.reset();
-        
-        // Восстановление кнопки
+        // Восстановление кнопки через 2 секунды
         setTimeout(() => {
           submitBtn.innerHTML = originalText;
           submitBtn.disabled = false;
         }, 2000);
-      }, 2000);
+      }, 1000);
     });
   }
 
@@ -241,13 +235,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Анимация появления
     setTimeout(() => {
-      notification.classList.add('translate-x-0', 'opacity-100');
+      notification.classList.add('show');
     }, 10);
 
     // Автоматическое скрытие
     setTimeout(() => {
-      notification.classList.remove('translate-x-0', 'opacity-100');
-      notification.classList.add('translate-x-full', 'opacity-0');
+      notification.classList.remove('show');
       setTimeout(() => notification.remove(), 300);
     }, 5000);
   }
