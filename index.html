@@ -14,7 +14,7 @@
   <meta property="og:image" content="https://dx2613-cmyk.github.io/podwall.github.io/podwall.jpeg">
   <meta property="og:url" content="https://dx2613-cmyk.github.io/podwall.github.io">
 
-   <!-- Favicon -->
+  <!-- Favicon -->
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
   <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -36,6 +36,7 @@
       }
     }
   </script>
+
   <style>
     /* Анимации */
     @keyframes fadeIn {
@@ -58,45 +59,31 @@
     .animate-fade-in {
       animation: fadeIn 0.6s ease-out forwards;
     }
-
-    /* Стиль для логотипа */
-    .logo {
-      height: 3rem;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
- <!-- Header -->
-<header class="bg-white shadow-lg sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center py-4">
-      <!-- Логотип -->
-      <div class="flex items-center space-x-3">
-        <img src="podwall.jpeg" alt="PODWALL" class="logo h-12 w-auto">
-      </div>
-
-      <!-- Навигация + телефоны -->
-      <div class="flex items-center space-x-8">
+  <!-- Header -->
+  <header class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <!-- Навигация -->
         <nav class="hidden md:flex items-center space-x-8">
           <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Услуги</a>
           <a href="#tradein" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Выкуп и Trade-in</a>
           <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">О нас</a>
           <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Контакты</a>
-
-          <!-- Телефоны в одной строке, жирным шрифтом -->
-          <div class="hidden lg:flex items-center space-x-4 ml-6 border-l border-gray-200 pl-6">
-            <a href="tel:83832333304" class="text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors">
-              8 (383) 233-33-04
-            </a>
-            <span class="text-gray-400">•</span>
-            <a href="tel:+79529096909" class="text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors">
-              8-952-909-6-909
-            </a>
-          </div>
         </nav>
+
+        <!-- Телефоны -->
+        <div class="flex items-center space-x-4">
+          <a href="tel:83832333304" class="text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors">
+            8 (383) 233-33-04
+          </a>
+          <span class="text-gray-400">•</span>
+          <a href="tel:+79529096909" class="text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors">
+            8-952-909-6-909
+          </a>
+        </div>
 
         <!-- Мобильная кнопка -->
         <button class="md:hidden text-gray-700" id="menu-toggle">
@@ -105,64 +92,56 @@
           </svg>
         </button>
       </div>
-    </div>
 
-    <!-- Мобильное меню -->
-    <div class="hidden bg-white border-t border-gray-200" id="mobile-menu">
-      <div class="px-4 py-3 space-y-2">
-        <!-- Телефоны в мобильном меню -->
-        <div class="space-y-1 border-b border-gray-100 pb-3 text-right">
-          <a href="tel:83832333304" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8 (383) 233-33-04</a>
-          <a href="tel:+79529096909" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8-952-909-6-909</a>
+      <!-- Мобильное меню -->
+      <div class="hidden bg-white border-t border-gray-200" id="mobile-menu">
+        <div class="px-4 py-3 space-y-2">
+          <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Услуги</a>
+          <a href="#tradein" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Выкуп и Trade-in</a>
+          <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">О нас</a>
+          <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Контакты</a>
+          <div class="space-y-1 border-t border-gray-100 pt-3">
+            <a href="tel:83832333304" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8 (383) 233-33-04</a>
+            <a href="tel:+79529096909" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8-952-909-6-909</a>
+          </div>
         </div>
-        <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Услуги</a>
-        <a href="#tradein" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Выкуп и Trade-in</a>
-        <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">О нас</a>
-        <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Контакты</a>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-  <!-- Hero Section -->
-<section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-  <!-- Фоновое фото -->
-  <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://dx2613-cmyk.github.io/podwall.github.io/proverka-toka-v-plate-noutbuka.jpg');"></div>
-  <div class="absolute inset-0 bg-black/30"></div> <!-- Тёмная прозрачная накладка -->
+  <!-- Hero Section (фон — podwall.jpeg) -->
+  <section class="relative min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('podwall.jpeg');">
+    <!-- Тёмная прозрачная накладка -->
+    <div class="absolute inset-0 bg-black/50"></div>
 
-  <div class="max-w-7xl mx-auto relative z-10">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-  Профессиональный <strong>ремонт</strong> электроники
-</h1>
-        <p class="text-xl text-gray-100 mb-8 leading-relaxed">
+    <!-- Контент поверх изображения -->
+    <div class="relative z-10 flex items-center justify-center min-h-screen">
+      <div class="text-center text-white max-w-4xl mx-auto px-6">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Профессиональный <strong>ремонт</strong> электроники
+        </h1>
+        <p class="text-xl mb-8 leading-relaxed">
           Сервисный центр PODWALL — профессиональный ремонт и обслуживание компьютеров, телефонов, оргтехники, мониторов. Заправка картриджей.
         </p>
 
-        <div class="flex flex-wrap gap-4 mb-8">
-  <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm border border-gray-200">
-    Надежно
-  </div>
-  <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm border border-gray-200">
-    Быстро
-  </div>
-  <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm border border-gray-200">
-    Профессионально
-  </div>
-</div>
+        <div class="flex flex-wrap justify-center gap-4 mb-8">
+          <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm">
+            Надежно
+          </div>
+          <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm">
+            Быстро
+          </div>
+          <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm">
+            Профессионально
+          </div>
+        </div>
 
         <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300" id="consult-btn">
           Заказать консультацию
         </button>
       </div>
-
-      <div class="hidden lg:block">
-        <!-- Пустое место для баланса -->
-      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Services Section -->
   <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
