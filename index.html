@@ -38,22 +38,18 @@
   </script>
 
   <style>
+    /* Стиль для логотипа в шапке */
+    .logo {
+      height: 4rem;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
     /* Анимации */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Стили для уведомлений */
-    .notification {
-      transform: translateX(100%);
-      opacity: 0;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .notification.show {
-      transform: translateX(0);
-      opacity: 1;
     }
 
     .animate-fade-in {
@@ -66,79 +62,89 @@
   <header class="bg-white shadow-lg sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center py-4">
-        <!-- Навигация -->
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Услуги</a>
-          <a href="#tradein" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Выкуп и Trade-in</a>
-          <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">О нас</a>
-          <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Контакты</a>
-        </nav>
-
-        <!-- Телефоны -->
-        <div class="flex items-center space-x-4">
-          <a href="tel:83832333304" class="text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors">
-            8 (383) 233-33-04
-          </a>
-          <span class="text-gray-400">•</span>
-          <a href="tel:+79529096909" class="text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors">
-            8-952-909-6-909
-          </a>
+        <!-- Логотип -->
+        <div class="flex items-center space-x-3">
+          <img src="podwall.jpeg" alt="PODWALL" class="logo">
         </div>
 
-        <!-- Мобильная кнопка -->
-        <button class="md:hidden text-gray-700" id="menu-toggle">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
+        <!-- Навигация и телефоны -->
+        <div class="flex items-center space-x-8">
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Услуги</a>
+            <a href="#tradein" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Выкуп и Trade-in</a>
+            <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">О нас</a>
+            <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Контакты</a>
+
+            <!-- Телефоны -->
+            <div class="hidden lg:flex items-center space-x-4 ml-6 border-l border-gray-200 pl-6">
+              <a href="tel:83832333304" class="text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                8 (383) 233-33-04
+              </a>
+              <span class="text-gray-400">•</span>
+              <a href="tel:+79529096909" class="text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors">
+                8-952-909-6-909
+              </a>
+            </div>
+          </nav>
+
+          <!-- Мобильная кнопка -->
+          <button class="md:hidden text-gray-700" id="menu-toggle">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <!-- Мобильное меню -->
       <div class="hidden bg-white border-t border-gray-200" id="mobile-menu">
         <div class="px-4 py-3 space-y-2">
+          <div class="space-y-1 border-b border-gray-100 pb-3 text-right">
+            <a href="tel:83832333304" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8 (383) 233-33-04</a>
+            <a href="tel:+79529096909" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8-952-909-6-909</a>
+          </div>
           <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Услуги</a>
           <a href="#tradein" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Выкуп и Trade-in</a>
           <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">О нас</a>
           <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Контакты</a>
-          <div class="space-y-1 border-t border-gray-100 pt-3">
-            <a href="tel:83832333304" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8 (383) 233-33-04</a>
-            <a href="tel:+79529096909" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8-952-909-6-909</a>
-          </div>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section (фон — podwall.jpeg) -->
-  <section class="relative min-h-screen bg-cover bg-center bg-no-repeat" style="background-image: url('podwall.jpeg');">
-    <!-- Тёмная прозрачная накладка -->
-    <div class="absolute inset-0 bg-black/50"></div>
+  <!-- Hero Section -->
+  <section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('proverka-toka-v-plate-noutbuka.jpg');"></div>
+    <div class="absolute inset-0 bg-black/30"></div>
 
-    <!-- Контент поверх изображения -->
-    <div class="relative z-10 flex items-center justify-center min-h-screen">
-      <div class="text-center text-white max-w-4xl mx-auto px-6">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-          Профессиональный <strong>ремонт</strong> электроники
-        </h1>
-        <p class="text-xl mb-8 leading-relaxed">
-          Сервисный центр PODWALL — профессиональный ремонт и обслуживание компьютеров, телефонов, оргтехники, мониторов. Заправка картриджей.
-        </p>
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Профессиональный <strong>ремонт</strong> электроники
+          </h1>
+          <p class="text-xl text-gray-100 mb-8 leading-relaxed">
+            Сервисный центр PODWALL — профессиональный ремонт и обслуживание компьютеров, телефонов, оргтехники, мониторов. Заправка картриджей.
+          </p>
 
-        <div class="flex flex-wrap justify-center gap-4 mb-8">
-          <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm">
-            Надежно
+          <div class="flex flex-wrap gap-4 mb-8">
+            <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm border border-gray-200">
+              Надежно
+            </div>
+            <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm border border-gray-200">
+              Быстро
+            </div>
+            <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm border border-gray-200">
+              Профессионально
+            </div>
           </div>
-          <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm">
-            Быстро
-          </div>
-          <div class="bg-white text-gray-800 px-4 py-2 rounded-full font-medium shadow-sm">
-            Профессионально
-          </div>
+
+          <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300" id="consult-btn">
+            Заказать консультацию
+          </button>
         </div>
 
-        <button class="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300" id="consult-btn">
-          Заказать консультацию
-        </button>
+        <div class="hidden lg:block"></div>
       </div>
     </div>
   </section>
@@ -147,16 +153,14 @@
   <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Наши услуги
-        </h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Наши услуги</h2>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
           Широкий спектр услуг по ремонту и обслуживанию электронной техники
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-container">
-        <!-- Услуги будут добавлены через script.js -->
+        <!-- Услуги добавляются через script.js -->
       </div>
     </div>
   </section>
@@ -165,9 +169,7 @@
   <section id="tradein" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-indigo-100">
     <div class="max-w-7xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Трейд-ин или выкуп?
-        </h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Трейд-ин или выкуп?</h2>
         <p class="text-xl text-gray-700 max-w-4xl mx-auto">
           У вас в ящике лежат старые смартфоны и вы не знаете, что с ними сделать?  
           Мы предлагаем вам целых 3 варианта, из которых вы сможете выбрать наиболее подходящий:
@@ -175,37 +177,22 @@
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <!-- Вариант 1 -->
         <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
-          <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
-            🔄
-          </div>
+          <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">🔄</div>
           <h3 class="text-xl font-bold text-gray-900 mb-4">Старое в зачёт нового</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Обменяйте старое устройство на новое с доплатой. Получите выгоду и обновите технику.
-          </p>
+          <p class="text-gray-600 leading-relaxed">Обменяйте старое устройство на новое с доплатой. Получите выгоду и обновите технику.</p>
         </div>
 
-        <!-- Вариант 2 -->
         <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
-          <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
-            🔧
-          </div>
+          <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">🔧</div>
           <h3 class="text-xl font-bold text-gray-900 mb-4">Старое в зачёт ремонта</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Сдайте старый телефон или ноутбук в зачёт стоимости ремонта. Экономьте на восстановлении.
-          </p>
+          <p class="text-gray-600 leading-relaxed">Сдайте старый телефон или ноутбук в зачёт стоимости ремонта. Экономьте на восстановлении.</p>
         </div>
 
-        <!-- Вариант 3 -->
         <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-2xl transition-shadow duration-300">
-          <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">
-            💰
-          </div>
+          <div class="w-16 h-16 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl">💰</div>
           <h3 class="text-xl font-bold text-gray-900 mb-4">Выкуп устройства</h3>
-          <p class="text-gray-600 leading-relaxed">
-            Продайте старую технику быстро и по честной цене. Оплата наличными сразу после оценки.
-          </p>
+          <p class="text-gray-600 leading-relaxed">Продайте старую технику быстро и по честной цене. Оплата наличными сразу после оценки.</p>
         </div>
       </div>
 
@@ -222,53 +209,31 @@
     <div class="max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Почему выбирают <span class="text-blue-600">именно нас</span>
-          </h2>
-
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Почему выбирают <span class="text-blue-600">именно нас</span></h2>
           <div class="space-y-6">
             <div class="flex items-start space-x-4">
-              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </div>
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mt-1"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
               <div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Профессиональная команда</h3>
                 <p class="text-gray-600">Наши мастера имеют большой опыт работы и постоянно повышают свою квалификацию</p>
               </div>
             </div>
-
             <div class="flex items-start space-x-4">
-              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </div>
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mt-1"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
               <div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Оригинальные запчасти</h3>
                 <p class="text-gray-600">Используем только качественные и проверенные комплектующие</p>
               </div>
             </div>
-
             <div class="flex items-start space-x-4">
-              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </div>
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mt-1"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
               <div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Быстрые сроки</h3>
                 <p class="text-gray-600">Оперативно выполняем ремонт, часто в тот же день</p>
               </div>
             </div>
-
             <div class="flex items-start space-x-4">
-              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </div>
+              <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center mt-1"><svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
               <div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">Гарантия на работы</h3>
                 <p class="text-gray-600">Предоставляем гарантию на все выполненные работы</p>
@@ -279,11 +244,7 @@
 
         <div class="relative">
           <div class="bg-white rounded-2xl shadow-2xl p-8">
-            <img 
-              src="https://placehold.co/500x400/e2e8f0/64748b?text=Сервисный+центр" 
-              alt="Сервисный центр PODWALL"
-              class="w-full h-64 object-cover rounded-xl mb-6"
-            />
+            <img src="https://placehold.co/500x400/e2e8f0/64748b?text=Сервисный+центр" alt="Сервисный центр PODWALL" class="w-full h-64 object-cover rounded-xl mb-6">
             <div class="space-y-4">
               <div class="flex items-center space-x-3">
                 <div class="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -309,12 +270,8 @@
     <div class="max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-12">
         <div>
-          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Свяжитесь с нами
-          </h2>
-          <p class="text-xl text-gray-600 mb-8">
-            Оставьте заявку и наш специалист свяжется с вами в ближайшее время
-          </p>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Свяжитесь с нами</h2>
+          <p class="text-xl text-gray-600 mb-8">Оставьте заявку и наш специалист свяжется с вами в ближайшее время</p>
 
           <div class="space-y-6">
             <div class="flex items-start space-x-4">
@@ -370,11 +327,9 @@
           </div>
         </div>
 
-        <!-- Форма обратной связи через Yandex Forms -->
+        <!-- Форма через Yandex Forms -->
         <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
           <h3 class="text-2xl font-bold text-gray-900 mb-6">Закажите обратный звонок</h3>
-
-          <!-- Подключение формы Яндекса -->
           <script src="https://forms.yandex.ru/_static/embed.js"></script>
           <iframe
             src="https://forms.yandex.ru/u/68a7fab01f1eb5024c4236dd?iframe=1"
