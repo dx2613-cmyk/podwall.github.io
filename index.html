@@ -11,14 +11,14 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="PODWALL — Ремонт электроники в Новосибирске">
   <meta property="og:description" content="Профессиональный ремонт компьютеров, телефонов, оргтехники. Заправка картриджей.">
-  <meta property="og:image" content="https://placehold.co/1200x630/e2e8f0/64748b?text=PODWALL+Сервисный+центр">
+  <meta property="og:image" content="https://dx2613-cmyk.github.io/podwall.github.io/podwall.jpeg">
   <meta property="og:url" content="https://dx2613-cmyk.github.io/podwall.github.io">
 
    <!-- Favicon -->
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="favicon-16.png" sizes="16x16" type="image/png">
 
   <title>PODWALL — Ремонт компьютеров и электроники в Новосибирске</title>
 
@@ -58,6 +58,14 @@
     .animate-fade-in {
       animation: fadeIn 0.6s ease-out forwards;
     }
+
+    /* Стиль для логотипа */
+    .logo {
+      height: 3rem;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
@@ -67,11 +75,7 @@
     <div class="flex justify-between items-center py-4">
       <!-- Логотип -->
       <div class="flex items-center space-x-3">
-       <img src="podwall.jpeg" alt="PODWALL" class="w-12 h-12 object-cover rounded-xl">
-        <div>
-          <h1 class="text-2xl font-bold text-gray-900">PODWALL</h1>
-          <p class="text-sm text-gray-600">Сервисный центр</p>
-        </div>
+        <img src="podwall.jpeg" alt="PODWALL" class="logo">
       </div>
 
       <!-- Навигация + телефоны -->
@@ -413,13 +417,7 @@
       <div class="grid md:grid-cols-3 gap-8">
         <div>
           <div class="flex items-center space-x-3 mb-4">
-            <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span class="text-white font-bold text-lg">P</span>
-            </div>
-            <div>
-              <h3 class="text-xl font-bold">PODWALL</h3>
-              <p class="text-gray-400 text-sm">Сервисный центр</p>
-            </div>
+            <img src="podwall.jpeg" alt="PODWALL" class="h-10 w-auto object-contain">
           </div>
           <p class="text-gray-400 leading-relaxed">
             Профессиональный ремонт и обслуживание компьютеров, телефонов, оргтехники, мониторов. Заправка картриджей.
@@ -455,11 +453,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
