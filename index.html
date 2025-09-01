@@ -58,64 +58,84 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900 antialiased">
-  <!-- Header -->
-  <header class="bg-white shadow-lg sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center py-4">
-        <!-- Логотип -->
-        <div class="flex items-center space-x-3">
-          <img src="Лого ПОДВАЛ.png" alt="PODWALL" class="h-16 w-auto object-contain">
-        </div>
-
-        <!-- Навигация и телефоны -->
-        <div class="flex items-center space-x-8">
-          <nav class="hidden md:flex items-center space-x-8">
-            <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Услуги</a>
-            <a href="#tradein" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Выкуп и Trade-in</a>
-            <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">О нас</a>
-            <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Контакты</a>
-
-            <!-- Телефоны -->
-            <div class="hidden lg:flex items-center space-x-4 ml-6 border-l border-gray-200 pl-6">
-              <a href="tel:83832333304" class="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                8 (383) 233-33-04
-              </a>
-              <span class="text-gray-400">•</span>
-              <div class="flex flex-col">
-                <a href="tel:+79529096909" class="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors">
-                  8-952-909-6-909
-                </a>
-                <a href="https://wa.me/79529096909" class="text-sm text-green-600 hover:text-green-800 mt-1">
-                  Написать в WhatsApp
-                </a>
-              </div>
-            </div>
-          </nav>
-
-          <!-- Мобильная кнопка -->
-          <button class="md:hidden text-gray-700" id="menu-toggle">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
-        </div>
+ <!-- Header -->
+<header class="bg-white shadow-lg sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      <!-- Логотип -->
+      <div class="flex items-center space-x-3">
+        <img src="Лого ПОДВАЛ.png" alt="PODWALL" class="h-16 w-auto object-contain">
       </div>
 
-      <!-- Мобильное меню -->
-      <div class="hidden bg-white border-t border-gray-200" id="mobile-menu">
-        <div class="px-4 py-3 space-y-2">
-          <div class="space-y-1 border-b border-gray-100 pb-3 text-right">
-            <a href="tel:83832333304" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8 (383) 233-33-04</a>
-            <a href="tel:+79529096909" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8-952-909-6-909</a>
-          </div>
-          <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Услуги</a>
-          <a href="#tradein" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Выкуп и Trade-in</a>
-          <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">О нас</a>
-          <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Контакты</a>
+      <!-- Навигация и телефоны -->
+      <div class="flex items-center space-x-8">
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Услуги</a>
+          <a href="#tradein" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Выкуп и Trade-in</a>
+          <a href="#about" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">О нас</a>
+          <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Контакты</a>
+        </nav>
+
+        <!-- Телефоны и кнопка "Мы на Авито" -->
+        <div class="hidden lg:flex items-center space-x-6 ml-6 border-l border-gray-200 pl-6">
+          <a href="tel:83832333304" class="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors">
+            8 (383) 233-33-04
+          </a>
+          <span class="text-gray-400">•</span>
+          <a href="tel:+79529096909" class="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors">
+            8-952-909-6-909
+          </a>
+          <a href="https://wa.me/79529096909" class="text-sm text-green-600 hover:text-green-800 mt-1 inline-block">
+            Написать в WhatsApp
+          </a>
+
+          <!-- Кнопка "Мы на Авито" -->
+          <a 
+            href="https://www.avito.ru/brands/i11341813?gdlkerfdnwq=101&page_from=from_item_header&iid=1076539062&page_from=from_item_card_button&iid=1076539062"
+            target="_blank"
+            class="inline-flex items-center px-4 py-2 bg-orange-500 text-white font-semibold rounded-xl hover:bg-orange-600 transition-colors shadow-md text-sm"
+          >
+            <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+            </svg>
+            Мы на Авито
+          </a>
         </div>
+
+        <!-- Мобильная кнопка -->
+        <button class="md:hidden text-gray-700" id="menu-toggle">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
-  </header>
+
+    <!-- Мобильное меню -->
+    <div class="hidden bg-white border-t border-gray-200" id="mobile-menu">
+      <div class="px-4 py-3 space-y-2">
+        <div class="space-y-1 border-b border-gray-100 pb-3 text-right">
+          <a href="tel:83832333304" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8 (383) 233-33-04</a>
+          <a href="tel:+79529096909" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8-952-909-6-909</a>
+          <a href="https://wa.me/79529096909" class="block text-sm text-green-600 hover:text-green-800 mt-1">
+            Написать в WhatsApp
+          </a>
+          <a 
+            href="https://www.avito.ru/brands/i11341813?gdlkerfdnwq=101&page_from=from_item_header&iid=1076539062&page_from=from_item_card_button&iid=1076539062"
+            target="_blank"
+            class="block text-sm text-orange-600 hover:text-orange-800 mt-1"
+          >
+            Мы на Авито
+          </a>
+        </div>
+        <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Услуги</a>
+        <a href="#tradein" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Выкуп и Trade-in</a>
+        <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">О нас</a>
+        <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Контакты</a>
+      </div>
+    </div>
+  </div>
+</header>
 
   <!-- Hero Section -->
   <section class="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -395,4 +415,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
