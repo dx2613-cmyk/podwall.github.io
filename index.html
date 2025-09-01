@@ -341,30 +341,24 @@
     </div>
   </section>
 
-  <!-- Отзывы на Яндекс.Картах -->
-  <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-    <div class="max-w-7xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Отзывы наших клиентов</h2>
-      <p class="text-xl text-gray-600 mb-8">Нам доверяют — посмотрите, что о нас говорят</p>
+ <!-- Маленький виджет отзывов Яндекс -->
+<section class="py-12 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold text-gray-900 mb-6">Наши отзывы</h2>
+    <p class="text-xl text-gray-600 mb-8">Нам доверяют — посмотрите, что говорят о нас клиенты</p>
 
-      <div class="bg-white rounded-xl shadow-lg p-6">
-        <div style="width:560px;height:800px;overflow:hidden;position:relative;">
-          <iframe 
-            style="width:100%;height:100%;border:1px solid #e6e6e6;border-radius:8px;box-sizing:border-box" 
-            src="https://yandex.ru/maps-reviews-widget/1003156099?comments" 
-            frameborder="0" 
-            allowfullscreen>
-          </iframe>
-          <a 
-            href="https://yandex.ru/maps/org/servisny_tsentr_tseis/1003156099/" 
-            target="_blank" 
-            style="box-sizing:border-box;text-decoration:none;color:#b3b3b3;font-size:10px;font-family:YS Text,sans-serif;padding:0 20px;position:absolute;bottom:8px;width:100%;text-align:center;left:0;overflow:hidden;text-overflow:ellipsis;display:block;max-height:14px;white-space:nowrap;padding:0 16px;box-sizing:border-box">
-            Сервисный центр Цэис на карте Новосибирска — Яндекс Карты
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Маленький виджет -->
+    <a 
+      href="https://yandex.ru/maps/org/servisny_tsentr_tseis/1003156099/" 
+      target="_blank" 
+      style="display: inline-block; width: 300px; height: 150px; border: 1px solid #e6e6e6; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      <img 
+        src="https://yandex.ru/maps/api/widgets/preview?oid=1003156099&lang=ru_RU&size=small" 
+        alt="Отзывы на Яндекс.Картах" 
+        style="width: 100%; height: 100%; object-fit: cover;">
+    </a>
+  </div>
+</section>
 
   <!-- Footer -->
   <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
@@ -412,4 +406,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
