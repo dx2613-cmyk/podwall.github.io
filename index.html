@@ -51,55 +51,71 @@
  <!-- Header -->
 <header class="bg-white shadow-lg sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center py-4">
+    <div class="flex justify-between items-center py-3">
       <!-- Логотип -->
-<div class="flex items-center space-x-3">
-  <img 
-    src="Лого ПОДВАЛ.png" 
-    alt="PODWALL" 
-    class="h-8 sm:h-10 md:h-12 w-auto object-contain max-w-full"
-  >
-</div>
+      <div class="flex items-center space-x-2 flex-shrink-0">
+        <img 
+          src="Лого ПОДВАЛ.png" 
+          alt="PODWALL" 
+          class="h-8 w-auto object-contain max-w-[120px] sm:max-w-none"
+        >
+      </div>
 
-      <!-- Навигация и телефоны -->
-      <div class="flex items-center space-x-1 md:space-x-6 ml-auto">
-        <nav class="flex items-center space-x-2 md:space-x-6 text-xs md:text-sm lg:text-base">
-          <a href="#services" class="font-medium text-gray-700 hover:text-blue-600 transition-colors whitespace-nowrap">Услуги</a>
-          <a href="#tradein" class="font-medium text-gray-700 hover:text-blue-600 transition-colors whitespace-nowrap">Выкуп и Trade-in</a>
-          <a href="#about" class="font-medium text-gray-700 hover:text-blue-600 transition-colors whitespace-nowrap">О нас</a>
-          <a href="#contact" class="font-medium text-gray-700 hover:text-blue-600 transition-colors whitespace-nowrap">Контакты</a>
-        </nav>
-
-        <!-- Телефон (только один на мобильных) -->
-        <div class="flex items-center space-x-1 ml-2">
-          <a href="tel:+79529096909" class="text-xs md:text-sm font-bold text-gray-900 hover:text-blue-600 transition-colors whitespace-nowrap">
-            8-952-909-6-909
-          </a>
-          <a 
-            href="https://wa.me/79529096909" 
-            target="_blank"
-            class="text-green-600"
+      <!-- Телефон и WhatsApp (только на мобильных и планшетах) -->
+      <div class="flex items-center space-x-2 flex-shrink-0">
+        <a 
+          href="tel:+79529096909" 
+          class="text-xs font-bold text-gray-900 hover:text-blue-600 whitespace-nowrap"
+        >
+          8-952-909-6-909
+        </a>
+        <a 
+          href="https://wa.me/79529096909" 
+          target="_blank"
+          class="flex-shrink-0"
+        >
+          <img 
+            src="icon-whatsapp.png" 
+            alt="WhatsApp" 
+            class="w-4 h-4"
           >
-            <img 
-              src="icon-whatsapp.png" 
-              alt="WhatsApp" 
-              class="w-4 h-4"
-            />
-          </a>
-        </div>
+        </a>
       </div>
     </div>
 
-    <!-- Мобильное меню (на всякий случай) -->
-    <div class="hidden bg-white border-t border-gray-200" id="mobile-menu">
-      <div class="px-4 py-3 space-y-2">
+    <!-- Навигация (скрыта на мобильных) -->
+    <nav class="hidden md:flex justify-center space-x-8 py-2 text-sm">
+      <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Услуги</a>
+      <a href="#tradein" class="text-gray-700 hover:text-blue-600 transition-colors">Выкуп и Trade-in</a>
+      <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors">О нас</a>
+      <a href="#contact" class="text-gray-700 hover:text-blue-600 transition-colors">Контакты</a>
+    </nav>
+
+    <!-- Мобильная кнопка -->
+    <div class="md:hidden flex justify-end">
+      <button 
+        class="text-gray-700 p-2" 
+        id="menu-toggle"
+        aria-label="Открыть меню"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Мобильное меню -->
+  <div class="hidden bg-white border-t border-gray-200" id="mobile-menu">
+    <div class="px-4 py-3 space-y-2">
+      <div class="space-y-1 border-b border-gray-100 pb-3 text-right">
         <a href="tel:83832333304" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8 (383) 233-33-04</a>
         <a href="tel:+79529096909" class="block text-sm font-bold text-gray-900 hover:text-blue-600">8-952-909-6-909</a>
-        <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Услуги</a>
-        <a href="#tradein" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Выкуп и Trade-in</a>
-        <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">О нас</a>
-        <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Контакты</a>
       </div>
+      <a href="#services" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Услуги</a>
+      <a href="#tradein" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Выкуп и Trade-in</a>
+      <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">О нас</a>
+      <a href="#contact" class="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg">Контакты</a>
     </div>
   </div>
 </header>
@@ -407,6 +423,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
